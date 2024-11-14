@@ -8,5 +8,5 @@ A simple plugin to allow players to opt in to PvP.
 - Much more!
 
 ## License
-<!-- LicenseID: LicenseRef-OQL-1.2 -->
+![OQL Licence Badge](https://badgers.space/badge/License/OQL/pink)
 This project uses the 🏳️‍🌈 **Opinionated Queer License**. The full license can be read in [LICENSE.md](https://github.com/aelithron/PvPToggle/tree/main/LICENSE.md), and a TL;DR can be found [here](https://oql.avris.it/license.tldr).
