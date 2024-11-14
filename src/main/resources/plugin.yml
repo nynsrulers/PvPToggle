@@ -1,0 +1,16 @@
+name: PvPToggle
+version: '1.0-SNAPSHOT'
+main: com.aelithron.pvptoggle.PvPToggle
+api-version: '1.21'
+prefix: PvP Toggle
+authors: [ Aelithron ]
+website: https://github.com/aelithron/PvPToggle
+description: A fairly simple PvP opt-in system.
+commands:
+  pvp:
+    description: Check and toggle your PvP status.
+  pvptadmin:
+    description: Admin commands for the plugin.
+    aliases:
+      - pvptoggleadmin
+      - pvpta
