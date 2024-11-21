@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.logging.Level;
+
 public final class PvPToggle extends JavaPlugin implements Listener {
 
     @Override
@@ -27,6 +29,11 @@ public final class PvPToggle extends JavaPlugin implements Listener {
         // Tab Completers
         getCommand("pvp").setTabCompleter(new PvPTabCompleter(this));
         getCommand("pvptadmin").setTabCompleter(new AdminTabCompleter(this));
+        // PlaceholderAPI Support
+        if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            getLogger().log(Level.INFO, "PlaceholderAPI found, adding placeholders!");
+            new PvPPlaceholders(this).register();
+        }
     }
 
     @Override

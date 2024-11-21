@@ -1,9 +1,10 @@
 name: PvPToggle
-version: '1.0-SNAPSHOT'
+version: '{version}'
 main: com.aelithron.pvptoggle.PvPToggle
 api-version: '1.21'
 prefix: PvP Toggle
 authors: [ Aelithron ]
+softdepend: [ PlaceholderAPI ]
 website: https://github.com/aelithron/PvPToggle
 description: A fairly simple PvP opt-in system.
 commands:
