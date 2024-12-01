@@ -32,11 +32,11 @@ public class PvPCMD implements CommandExecutor {
             if (args[0].equalsIgnoreCase("l") || args[0].equalsIgnoreCase("list")) {
                 sender.sendMessage(prefix + ChatColor.DARK_AQUA + "PvP Status List");
                 for (Player players : plugin.getServer().getOnlinePlayers()) {
-                    boolean status = ToggleManager.getInstance().checkStatus(player);
+                    boolean status = ToggleManager.getInstance().checkStatus(players);
                     if (status) {
-                        sender.sendMessage(ChatColor.GREEN + player.getName() + " • Enabled");
+                        sender.sendMessage(ChatColor.GREEN + players.getName() + " • Enabled");
                     } else {
-                        sender.sendMessage(ChatColor.RED + player.getName() + " • Disabled");
+                        sender.sendMessage(ChatColor.RED + players.getName() + " • Disabled");
                     }
                 }
                 return true;
