@@ -14,11 +14,10 @@ public class PvPCMD implements CommandExecutor {
     String prefix = CoreTools.getInstance().getPrefix();
     @Override
     public boolean onCommand(CommandSender sender, Command command, String name, String[] args) {
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player player)) {
             sender.sendMessage(prefix + ChatColor.RED + "You must be a player to use this command.");
             return false;
         }
-        Player player = (Player) sender;
         if (args.length != 0) {
             if (args[0].equalsIgnoreCase("t") || args[0].equalsIgnoreCase("toggle")) {
                 if (CombatTimerManager.getInstance().checkStatus(player)) {
