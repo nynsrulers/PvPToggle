@@ -37,6 +37,12 @@ public class PvPPlaceholders extends PlaceholderExpansion {
 
     @Override
     public String onRequest(OfflinePlayer player, @NotNull String params) {
+        if (params.equalsIgnoreCase("status_short")) {
+            if (player == null || !player.isOnline() || player.getPlayer() == null) {
+                return null;
+            }
+            return ChatColor.translateAlternateColorCodes('&', ToggleManager.getInstance().checkStatus(player.getPlayer()) ? "&a🗡" : "&c🛡");
+        }
         if (params.equalsIgnoreCase("status")) {
             if (player == null || !player.isOnline() || player.getPlayer() == null) {
                 return null;
