@@ -52,10 +52,7 @@ public final class PvPToggle extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onAttack(EntityDamageByEntityEvent event) {
-        if (!(event.getDamageSource().getCausingEntity() instanceof Player)) {
-            return;
-        }
-        if (!(event.getEntity() instanceof Player)) {
+        if (!(event.getDamageSource().getCausingEntity() instanceof Player) || !(event.getEntity() instanceof Player) || event.getEntity().hasMetadata("NPC")) {
             return;
         }
         String prefix = CoreTools.getInstance().getPrefix();
@@ -84,7 +81,7 @@ public final class PvPToggle extends JavaPlugin implements Listener {
     @EventHandler
     public void onDeath(PlayerDeathEvent event) {
         CombatTimerManager.getInstance().removePlayer(event.getEntity());
-        if (getConfig().getBoolean("DeathToggle") && event.getDamageSource().getCausingEntity() != null && event.getDamageSource().getCausingEntity() instanceof Player) {
+        if (getConfig().getBoolean("DeathToggle") && event.getDamageSource().getCausingEntity() != null && event.getDamageSource().getCausingEntity() instanceof Player && !event.getEntity().hasMetadata("NPC")) {
             ToggleManager.getInstance().removePlayer(event.getEntity());
             event.getEntity().sendMessage(CoreTools.getInstance().getPrefix() + ChatColor.RED + "Your PvP has been disabled automatically due to death. To re-enable it, run '/pvp t'.");
         }
