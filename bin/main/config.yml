@@ -1,0 +1,22 @@
+# PvPToggle by Aelithron
+# https://github.com/Aelithron/PvPToggle
+# A simple plugin to allow players to opt in to PvP.
+
+# Prefix
+# Appears in front of every message from the plugin.
+# Supports color codes, guide at https://wiki.ess3.net/mc
+Prefix: "&8[&4PvP &6Toggle&8]"
+
+# PvP on by default?
+# Enable this to make all players' PvP on by default.
+PvPDefaultOn: false
+
+# Combat Timer Duration
+# The duration of the combat timer in seconds.
+# If a player is out of combat for this long, they can disable PvP.
+CombatTimerDuration: 10
+
+# Death Toggle
+# Enable this to auto-disable players' PvP when they die.
+# This will only trigger when a player dies to another player.
+DeathToggle: false

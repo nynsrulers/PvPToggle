@@ -58,6 +58,12 @@ public final class PvPToggle extends JavaPlugin implements Listener {
         String prefix = CoreTools.getInstance().getPrefix();
         Player victim = (Player) event.getEntity();
         Player attacker = (Player) event.getDamageSource().getCausingEntity();
+
+        // allows a player to damage themselves, like for bow-boosting, etc
+        if(victim.getName().equals(attacker.getName())) {
+            return;
+        }
+        
         if (!ToggleManager.getInstance().checkStatus(attacker)) {
             event.setCancelled(true);
             attacker.sendMessage(prefix + ChatColor.RED + "Your PvP is disabled! Enable with '/pvp t'.");
